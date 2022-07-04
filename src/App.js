@@ -7,12 +7,12 @@ import Home from './components/Home';
 import SingleMovie from './components/SingleMovie';
 import Error from './components/Error';
 
-function App() {
+const App = () => {
   return (
     <div>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/movie/:id" element={<SingleMovie />} />
+          <Route path="movie/:id" element={<SingleMovie />} />
           <Route path="*" element={<Error />} />
         </Routes>
     </div>
