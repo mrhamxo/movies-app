@@ -1,9 +1,26 @@
-import React from 'react'
+import React from "react";
+import { useGlobalContext } from "../contextapi/context";
 
 const Search = () => {
+  const { query, setQuery, error } = useGlobalContext();
   return (
-    <div>Search</div>
-  )
-}
+    <section className="search-section">
+      <h2>Search Your Favorite Movies</h2>
+      <form action="#" onSubmit={(e) => e.preventDefault()}>
+        <div>
+          <input
+            type="text"
+            value={query}
+            placeholder="Search Here"
+            onChange={(e) => setQuery(e.target.value)}
+          />
+        </div>
+      </form>
+      <div className="card-error">
+        <p>{error.show && error.msg}</p>
+      </div>
+    </section>
+  );
+};
 
-export default Search
+export default Search;
