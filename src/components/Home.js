@@ -1,13 +1,15 @@
-import Search from './Search';
-import Movies from './Movies';
+import Search from "./Search";
+import Movies from "./Movie";
 
 const Home = () => {
   return (
     <>
-      <Search />
-      <Movies />
+      <div className="container">
+        <Search />
+        <Movies />
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

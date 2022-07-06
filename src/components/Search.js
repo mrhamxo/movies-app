@@ -2,7 +2,7 @@ import React from "react";
 import { useGlobalContext } from "../contextapi/context";
 
 const Search = () => {
-  const { query, setQuery, error } = useGlobalContext();
+  const { query, setQuery, isError } = useGlobalContext();
   return (
     <section className="search-section">
       <h2>Search Your Favorite Movies</h2>
@@ -17,7 +17,7 @@ const Search = () => {
         </div>
       </form>
       <div className="card-error">
-        <p>{error.show && error.msg}</p>
+        <p>{isError.show && isError.msg}</p>
       </div>
     </section>
   );
